@@ -5,23 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Busana extends Model
+class Kategori extends Model
 {
     use HasFactory;
 
-    protected $table = 'tb_busana';
+
+    protected $table = 'tb_kategori';
 
 
     protected $fillable = [
-        'id_busana',
-        'nama_busana'
+        'id_kategori',
+        'nama_kategori'
     ];
 
 
     public static function GenerateID()
     {
-        $prefix = 'BUSN' . date('Ymd');
-        $MaxID = Busana::where('id_busana', 'like', $prefix . '%')->max('id_busana');
+        $prefix = 'KTG' . date('Ymd');
+        $MaxID = Kategori::where('id_kategori', 'like', $prefix . '%')->max('id_kategori');
 
         if ($MaxID == null) {
 

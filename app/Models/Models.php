@@ -5,23 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Busana extends Model
+class Models extends Model
 {
     use HasFactory;
 
-    protected $table = 'tb_busana';
+    protected $table = 'tb_model';
 
 
     protected $fillable = [
-        'id_busana',
-        'nama_busana'
+        'id_model',
+        'nama_model'
     ];
 
 
     public static function GenerateID()
     {
-        $prefix = 'BUSN' . date('Ymd');
-        $MaxID = Busana::where('id_busana', 'like', $prefix . '%')->max('id_busana');
+        $prefix = 'KTG' . date('Ymd');
+        $MaxID = Models::where('id_model', 'like', $prefix . '%')->max('id_model');
 
         if ($MaxID == null) {
 
